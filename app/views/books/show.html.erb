@@ -1,1 +1,18 @@
-<h2>Book ditail</h2>
+
+
+
+
+  <div class="col-md-8 offset-md-1">
+  		<h2>Book detail</h2>
+  		<table class="table">
+  		  <tbody><tr>
+          <td><a href="/users">
+            <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
+            mizuki</a></td>
+          <td><a href="/books/41570">a</a></td>
+          <td>a</td>
+            <td><a class="btn btn-sm btn-success edit_book_41570" href="/books/41570/edit">Edit</a></td>
+            <td><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book_41570" rel="nofollow" data-method="delete" href="/books/41570">Destroy</a></td>
+        </tr>
+      </tbody></table>
+    </div>
