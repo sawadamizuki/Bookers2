@@ -1,13 +1,14 @@
 <h2>User edit</h2>
-
-<h4>name</h4>
-
-
-<h4>image</h4>
-<%= f.attachment_field :profile_image, placeholder: "プロフィール画像"  %>
+<%= form_with model: @user, url:'/users', local:true do |f| %>
+  <h4>name</h4>
 
 
-<h4>introduction</h4>
+  <h4>image</h4>
+  <%= f.attachment_field :profile_image %>
 
+
+
+  <h4>introduction</h4>
+<% end %>
 
 
