@@ -1,5 +1,26 @@
-   
-   
-   
-   
-   <h2>Book edit</h2>
+<h2>Editing Book</h2>
+<%= form_with model:@book, local:true do |f| %>
+
+ <p id="notice"><%= flash[:notice] %></p>
+
+ <% if @book.errors.any? %>
+   <p id="error">
+     <% pluralize(@book.errors.count, "error") %> error prohibited this book from being saved:
+     <% @book.errors.full_messages.each do |message| %>
+      <%= message %>
+     <% end %>
+   </p>
+  <% end %>
+
+ <div class="field">
+   <label for="book_title">Title</label>
+   <span><%= f.text_field :title %></span>
+ </div>
+ <div class="field">
+   <label for="book_body">Opinion</label>
+   <span><%= f.text_area :body %></span>
+ </div>
+
+  <%= f.submit 'Update Book' %>
+
+<% end %>
