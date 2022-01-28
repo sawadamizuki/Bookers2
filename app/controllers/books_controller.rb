@@ -20,7 +20,6 @@ class BooksController < ApplicationController
   def index
     @book = Book.all
     @user = current_user
-
   end
 
   def show

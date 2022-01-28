@@ -1,14 +1,23 @@
-<h2>User edit</h2>
-<%= form_with model: @user, url:'/users', local:true do |f| %>
-  <h4>name</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <h2>User info</h2>
+      <%= form_with model: @user, url:'/users', local:true do |f| %>
+       <p>Name</p>
+       <%= f.text_field :name %>
+       <p>Image</p>
+       <%= f.attachment_field :profile_image %>
+       <p>introduction</p>
+      <%= f.text_area :introduction %>
+
+      <%= f.submit 'Update User' %>
+     <% end %>
+
+    </div>
+  </div>
+</div>
 
 
-  <h4>image</h4>
-  <%= f.attachment_field :profile_image %>
 
-
-
-  <h4>introduction</h4>
-<% end %>
 
 

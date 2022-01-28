@@ -4,20 +4,28 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
-        <% @book.each do |book| %>
-         <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-          <table class="table">
-           <tr>
-            
-            <th>Title</th>
-            <th><%= book.title %></th>
-           </tr>
-           <tr>
-            <th>Opinion</th>
-            <th><%= book.body %></th>
-           </tr>
-          </table>
-         <% end %>
+
+         <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Opinion</th>
+                </tr>
+            </thead>
+
+           <% @book.each do |book| %>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td><%=link_to book.title, "/books/#{book.id}" %></td>
+                    <td><%= book.body %></td>
+                </tr>
+            </tbody>
+           <% end %>
+         </table>
+
     </div>
   </div>
 </div>

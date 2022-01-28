@@ -4,18 +4,23 @@
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
       <% @book.each do |book| %>
-          <table class="table">
-           <tr>
-            <th></th>
-            <th>Title</th>
-            <th><%= book.title %></th>
-           </tr>
-           <tr>
-            <th>Opinion</th>
-            <th><%= book.body %></th>
-           </tr>
-          </table>
-      
+           <table class="table">
+              <thead>
+                 <tr>
+                  <th></th>
+                  <th>Title</th>
+                  <th>Opinion</th>
+                 </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td></td>
+                      <td><%= book.title %></td>
+                      <td><%= book.body %></td>
+                  </tr>
+              </tbody>
+           </table>
+
       <% end %>
 
     </div>
