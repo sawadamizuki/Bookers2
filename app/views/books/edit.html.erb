@@ -20,7 +20,8 @@
    <label for="book_body">Opinion</label>
    <span><%= f.text_area :body %></span>
  </div>
+　<input type="submit" value="Update Book" class="btn btn-success" >
 
-  <%= f.submit 'Update Book' %>
+　<p><%= link_to "Show", user_path %> | <%= link_to "Back", books_path %></p>
 
 <% end %>

@@ -4,18 +4,21 @@
     <div class="col-md-8 offset-md-1">
   		<h2>Book detail</h2>
   		<table class="table">
-  		  <tbody><tr>
-          <td><a href="/users">
-            <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %><br>
-            <%= current_user.name %>
-            </a></td>
-          <td><a href="/books"></a></td>
-          <td></td>
+  		  <tbody>
+  		    <tr>
+           <td>
+              <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %><br>
+              <%= link_to current_user.name, user_path(current_user)  %>
+           </td>
+           <td><%= @book.title %></td>
+           <td><%= @book.body %></td>
             <td>
               <%= link_to "Edit", edit_book_path(@book), class: 'btn btn-success' %>
             </td>
-            <td><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book_41570" rel="nofollow" data-method="delete" href="/books/41570">Destroy</a></td>
-        </tr>
+            <td>
+              <%= link_to "Destroy", users_path, method: :delete, class: 'btn btn-sm btn-danger' %>
+            </td>
+          </tr>
       </tbody></table>
     </div>
   </div>
