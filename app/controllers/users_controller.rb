@@ -5,9 +5,11 @@ class UsersController < ApplicationController
 
   end
 
+
+
   def index
     @user = User.all
-  
+
   end
 
   def edit
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(usre_params)
-    redirect_to users_path
+    redirect_to users_path, notice: "You have updated user successfully."
   end
 
   private
