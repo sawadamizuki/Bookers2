@@ -9,16 +9,20 @@
                  <tr>
                   <th>Image</th>
                   <th>name</th>
-                  <th></th>u
+                  <th></th>
                  </tr>
               </thead>
-              <tbody>
+
+              <% @user.each do |user| %>
+
+                <tbody>
                   <tr>
-                      <td></td>
+                      <td><%= attachment_image_tag @usre, :pofile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
                       <td><%= user.name %></td>
-                      <td><%= link_to "Show", user_path %></td>
+                      <td><%= link_to "Show", user_path(@user) %></td>
                   </tr>
-              </tbody>
+                </tbody>
+              <% end %>
            </table>
       <% end %>
     </div>
