@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root to: 'homes#top'
 
   resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update]
-  resources :users, only: [:show, :index, :edit, :update]
+  resources :users, only: [:show, :index, :edit, :update, :create]
 
   get 'index' => 'homes#index'
+  patch '/books' => 'books#update'
 
 end

@@ -4,7 +4,7 @@
      <div class="col-md-3">
       <h2>User info</h2>
 
-       <%= attachment_image_tag @usre, :pofile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+       <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
         <table class="table">
          <tbody>
           <tr>
@@ -29,8 +29,8 @@
           <p>Opinion</p>
           <%= f.text_area :body %>
 
+          <%= f.submit 'submit' %>
 
-          <input type="submit" value="Create Book" class="btn btn-success" >
 
         <% end %>
      </div>
