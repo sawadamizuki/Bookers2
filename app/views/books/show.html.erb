@@ -13,10 +13,11 @@
            <td><%= @book.title %></td>
            <td><%= @book.body %></td>
             <td>
-              <%= link_to "Edit", edit_book_path(@book), class: 'btn btn-success' %>
+              <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-success' %>
             </td>
             <td>
-              <%= link_to "Destroy", users_path(@user.id), method: :delete, data: {confirm: "消しますか？"} class: 'btn btn-sm btn-danger' %>
+              <%= link_to "Destroy", books_path(@book.id), class: 'btn btn-sm btn-danger', method: :delete, data: {confirm: "消しますか？"} %>
+
             </td>
           </tr>
       </tbody></table>
