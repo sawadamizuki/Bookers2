@@ -3,18 +3,20 @@
  <div class="row">
   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
    <h2>Editing Book</h2>
+
       <%= form_with model:@book, local:true do |f| %>
 
-       <p id="notice"><%= flash[:notice] %></p>
+
 
        <% if @book.errors.any? %>
-         <p id="error">
-           <% pluralize(@book.errors.count, "error") %> error prohibited this book from being saved:
-           <% @book.errors.full_messages.each do |message| %>
-            <%= message %>
-           <% end %>
-         </p>
-        <% end %>
+         <%= @book.errors.count %>error prohibited this obj from being saved:
+          <ul>
+             <% @book.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+            <% end %>
+           </ul>
+       <% end %>
+
 
 
          <p>Title</p>

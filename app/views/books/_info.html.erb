@@ -13,7 +13,7 @@
           </tr>
           <tr>
      	     <th>introduction</th>
-      	   <th></th>
+      	   <th><%= @user.introduction %></th>
           </tr>
          </tbody>
         </table>
@@ -23,6 +23,9 @@
             <% end %>
          </div>
         <h2>New book</h2>
+
+
+
         <%= form_with model: book, url:'/books', local:true do |f| %>
           <p>Title</p>
           <%= f.text_field :title %>
