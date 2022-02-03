@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :edit, :update, :create]
 
   get 'index' => 'homes#index'
+
   patch '/books' => 'books#update'
 
 end
