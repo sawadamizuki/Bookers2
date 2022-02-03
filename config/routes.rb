@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update]
   resources :users, only: [:show, :index, :edit, :update, :create]
 
-  get 'index' => 'homes#index'
 
+  get '/home/about' => 'homes#index'
   patch '/books' => 'books#update'
 
 end
