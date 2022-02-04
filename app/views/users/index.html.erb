@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container px-5 px-sm-0">
 
 
 
@@ -8,7 +8,7 @@
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
 
-           <table class="table">
+           <table class="table table-hover table-inverse">
               <thead>
                  <tr>
                   <th>Image</th>
@@ -17,16 +17,21 @@
                  </tr>
               </thead>
 
-              <% @user.each do |user| %>
+
 
                 <tbody>
-                  <tr>
+
+                  <% @user.each do |user| %>
+                   <tr>
                       <td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %></td>
                       <td><%= user.name %></td>
                       <td><%= link_to "Show", user_path(user) %></td>
-                  </tr>
+                   </tr>
+
+                  <% end %>
+                  <%= paginate @user %>
                 </tbody>
-              <% end %>
+
            </table>
 
     </div>
