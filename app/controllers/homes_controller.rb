@@ -3,7 +3,7 @@ class HomesController < ApplicationController
   def top
   end
 
-  def indexcd
+  def about
   end
 
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :edit, :update, :create]
 
 
-  get '/home/about' => 'homes#index'
+  get '/home/about' => 'homes#about'
   patch '/books' => 'books#update'
 
 end

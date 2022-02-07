@@ -10,7 +10,7 @@
   		  <tbody>
   		    <tr>
            <td>
-              <%= link_to user_path(current_user) do %>
+              <%= link_to user_path(@user) do %>
                <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %><br>
                <%= @user.name %>
               <% end %>
@@ -19,11 +19,16 @@
            <td><%= @book.body %></td>
 
              <td>
+              <% if @user == current_user %>
                 <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-success' %>
+              <% end %>
              </td>
              <td>
-              <%= link_to "Destroy", book_path(@book.id), class: 'btn btn-sm btn-danger', method: :delete, data: {confirm: "消しますか？"} %>
+              <% if @user == current_user %>
+                <%= link_to "Destroy", book_path(@book), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "消しますか？"} %>
+              <% end %>
              </td>
+
 
           </tr>
       </tbody></table>
